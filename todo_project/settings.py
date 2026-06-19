@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-arw&nbpd8v*9)9+ag7eob@9bpi@)(ra88de4zbgvy!w()7pb!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "todo-project-gly5.onrender.com",
+    "locahlhost",
+    '127.0.0.1',
+]
 
 
 # Application definition
