@@ -77,15 +77,23 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'tododb',
+#         'USER': 'mysqldb',
+#         'PASSWORD': 'mysqldb',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
+
+import dj_database_url
+import os
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tododb',
-        'USER': 'mysqldb',
-        'PASSWORD': 'mysqldb',
-        'HOST': 'localhost',
-        'PORT': '3306'
-    }
+    'default':dj_database_url.config(
+        default=os.environ.get("postgresql://student_db_2112_user:iOryEEOeOkYb4x5FN3k0qPdYHctyucTE@dpg-d8od27b7uimc739fico0-a/student_db_2112")
+    )
 }
 
 
