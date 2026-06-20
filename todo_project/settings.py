@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-arw&nbpd8v*9)9+ag7eob@9bpi@)(ra88de4zbgvy!w()7pb!%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "todo-project-gly5.onrender.com",

@@ -30,19 +30,7 @@ def dashboard(request):
 
     todos = Todo.objects.filter(user=request.user)
 
-    paginator = Paginator(todos, 5)
 
-    page_number = request.GET.get('page')
-
-    todos = paginator.get_page(page_number)
-
-    # Search Features
-
-    search = request.GET.get('search')
-
-    if search:
-        todos = todos.filter(title__icontains=search)
-    
     # Filter Features
 
     status = request.GET.get('status')
@@ -54,6 +42,23 @@ def dashboard(request):
     elif status == 'pending':
             todos = todos.filter(completed=False)
 
+    # Search Features
+
+    search = request.GET.get('search')
+
+    if search:
+        todos = todos.filter(title__icontains=search)
+            
+
+
+    paginator = Paginator(todos, 5)
+
+    page_number = request.GET.get('page')
+
+    todos = paginator.get_page(page_number)
+
+    
+    
 
 
     return render(request, 'dashboard.html', {'todos':todos, 'form':form}) 
