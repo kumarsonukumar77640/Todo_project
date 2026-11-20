@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
 from .models import Todo
 from .forms import TodoForm
 from django.core.paginator import Paginator
@@ -113,9 +112,6 @@ def complete_todo(request, id):
     return redirect('dashboard')
     
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')
 
 def register(request):
 

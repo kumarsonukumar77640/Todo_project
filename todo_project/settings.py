@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "todo-project-gly5.onrender.com",
-    "locahlhost",
+    "localhost",
     '127.0.0.1',
 ]
 
@@ -88,13 +88,15 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 #     }
 # }
 
-import dj_database_url
-import os
+# import os
+# import dj_database_url
 DATABASES = {
-    'default':dj_database_url.config(
-        default=os.environ.get("postgresql://student_db_2112_user:iOryEEOeOkYb4x5FN3k0qPdYHctyucTE@dpg-d8od27b7uimc739fico0-a/student_db_2112")
-    )
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
+
 
 
 # Password validation
